@@ -1,20 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const {todolist} = require('../models/index')
+const {getAll,postData,getDataById,editById,deleteById} = require('../controller/todolistController')
 /* GET home page. */
-router.post('/activity-groups', async function(req, res, next) {
-  try {
-    const {title,body} = req.body
-
-    todolist.create({
-      title:title,
-      body:body
-    })
-    return res.json('ok')
-
-  } catch (error) {
-    res.send('eror blok')
-  }
-});
+router.get('/todo-items',getAll)
+router.get('/todo-items/:id',getDataById)
+router.post('/todo-items', postData)
+router.put('/todo-items/:id',editById)
+router.delete('/todo-items/:id',deleteById)
 
 module.exports = router;
