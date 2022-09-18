@@ -54,9 +54,9 @@ const editById = async function(req, res) {
             }
         })
         .then(data => data == 1 ? res.json({
-            message: `succes update`
+            message: `success update`
         }) : res.json({
-            message: `succes update`
+            message: `success update`
         }))
 
 }
@@ -70,7 +70,7 @@ const deleteById = async function(req, res) {
             }
         })
         .then(data => data ? res.json({
-            message: `delete succes`
+            message: `delete success`
         }) : res.json({
             message: `nothing data with id ${id}`
         }))
